@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+}
+
+$text-ligthGrey: #99A2AD;
+$base-bg-color: #F3F4F5;
+$base-black-text: #161616;
+
+
+.searchBox {
+    display: flex;
+
+    // justify-content: center;
+    align-items: center;
+    .imageSearch {
+        width: 18px;
+        height: 18px;
+    }
+    .inputSearch {
+        min-width: 240px;
+        height: 40px;
+        margin-left: 6px;
+        border: none;
+        font-size: 16px;
+        ::placeholder {
+            color: $text-ligthGrey;
+            font-weight: 400;
+            line-height: 20;
+            letter-spacing: 2%;
+        }
+        :focus {
+            border: none;
+        }
+    }
+}
+.addSection {
+    .button_addSection {
+        padding: 11px;
+        border: none;
+        .imagePlus {
+            
+            width: 18px;
+            height: 18px;
+        }
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $text-ligthGrey;
+}
+
+ul {
+    
+    li {
+       color: $text-ligthGrey;
+       list-style-type: none;
+    }
+}
+
+body {
+    background-color: $base-bg-color;
+
+    .mainPage_Wrapp {
+        width: 90%;
+        // background-color: #333;
+        margin-left: auto;
+        margin-right: auto;
+
+        .mainPage_flexContainer {
+            display: flex;
+        }
+
+
+        .mainPage_header{
+            background-color: $base-bg-color;
+            position: sticky;
+            top: 0;
+            padding-top: 67px;
+            // background-color: #00ff55;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            // border-bottom: 2px solid $text-ligthGrey; //выглядит как залупа, но почему бы и нет
+        }
+
+        .mainPage_aside {
+            padding-top: 20px;
+            width: 250px;
+            .pageSelector {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: 23px;
+                gap: 23px;
+            }
+            .li_pageSelector {
+                 gap: 6px;
+                display: flex;
+                align-items: center;
+                font-style: 16px;
+        
+            }
+
+        }
+
+        .mainPage_main {
+            padding-top: 20px;
+            width: 900px;
+            // .mainPage_mainSections{
+            //     .mainSections{
+            //         display: flex;
+            //         gap: 48px;
+            //         .li_pageSections{
+            //             font-style: 16px;
+            //         }
+            //     }
+            // }
+            .equipment_table {
+                border-spacing: 43px 20px;
+                thead {
+                    color: $text-ligthGrey;
+                    font-size: 16px;
+                }
+                tbody {
+                    color: $base-black-text;
+                    font-weight: 400;  
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}
+
+
+
+

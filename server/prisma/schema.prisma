@@ -1,0 +1,43 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+
+model Equipment {
+  id  Int @id @default(autoincrement()) //id обьекта таблицы
+  type  String  //тип обьекта (свет, звук, экран, коммутация, железо, прочее)
+  name  String //название обьекта (Clay Paky K10)
+  total Int //общее количество обьектов всего
+  inWorks InWork[] @relation("EquipmentInWork") //обьекты в работе у нас, количество
+  inRents   InRent[]   @relation("EquipmentInRent") //обьекты в аренде, количество
+}
+
+model InWork {
+  id          Int        @id @default(autoincrement()) //id проекта 
+  equipment   Equipment  @relation("EquipmentInWork", fields: [equipmentId], references: [id]) //что уехало на обьект
+  equipmentId Int //id обьекта??? хз по идее да
+  quantity    Int //сколько обьектов уехало
+  note        String?     // опционально: комментарий, дата и т.д.
+  createdAt   DateTime    @default(now()) //залупа которая указывает дату\время когда создали это значение
+}
+
+model InRent {
+  id          Int        @id @default(autoincrement()) //id аренды
+  equipment   Equipment  @relation("EquipmentInRent", fields: [equipmentId], references: [id]) //что отдали в аренду
+  equipmentId Int //id обьекта отданых в аренду
+  quantity    Int //количетство обьектов отданых в аренду
+  client      String?     // имя клиента, например (хуй в кепке)
+  rentedAt    DateTime    @default(now()) //дата\время когда отдали, по дефолту устанавливает текущее дату\время
+}

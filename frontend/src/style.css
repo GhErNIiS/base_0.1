@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
+}
+
+.searchBox {
+  display: flex;
+  align-items: center;
+}
+.searchBox .imageSearch {
+  width: 18px;
+  height: 18px;
+}
+.searchBox .inputSearch {
+  min-width: 240px;
+  height: 40px;
+  margin-left: 6px;
+  border: none;
+  font-size: 16px;
+}
+.searchBox .inputSearch ::-moz-placeholder {
+  color: #99A2AD;
+  font-weight: 400;
+  line-height: 20;
+  letter-spacing: 2%;
+}
+.searchBox .inputSearch ::placeholder {
+  color: #99A2AD;
+  font-weight: 400;
+  line-height: 20;
+  letter-spacing: 2%;
+}
+.searchBox .inputSearch :focus {
+  border: none;
+}
+
+.addSection .button_addSection {
+  padding: 11px;
+  border: none;
+}
+.addSection .button_addSection .imagePlus {
+  width: 18px;
+  height: 18px;
+}
+
+a {
+  text-decoration: none;
+  color: #99A2AD;
+}
+
+ul li {
+  color: #99A2AD;
+  list-style-type: none;
+}
+
+body {
+  background-color: #F3F4F5;
+}
+body .mainPage_Wrapp {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+body .mainPage_Wrapp .mainPage_flexContainer {
+  display: flex;
+}
+body .mainPage_Wrapp .mainPage_header {
+  background-color: #F3F4F5;
+  position: sticky;
+  top: 0;
+  padding-top: 67px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+body .mainPage_Wrapp .mainPage_aside {
+  padding-top: 20px;
+  width: 250px;
+}
+body .mainPage_Wrapp .mainPage_aside .pageSelector {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: 23px;
+  gap: 23px;
+}
+body .mainPage_Wrapp .mainPage_aside .li_pageSelector {
+  gap: 6px;
+  display: flex;
+  align-items: center;
+  font-style: 16px;
+}
+body .mainPage_Wrapp .mainPage_main {
+  padding-top: 20px;
+  width: 900px;
+}
+body .mainPage_Wrapp .mainPage_main .equipment_table {
+  border-spacing: 43px 20px;
+}
+body .mainPage_Wrapp .mainPage_main .equipment_table thead {
+  color: #99A2AD;
+  font-size: 16px;
+}
+body .mainPage_Wrapp .mainPage_main .equipment_table tbody {
+  color: #161616;
+  font-weight: 400;
+  font-size: 18px;
+}/*# sourceMappingURL=style.css.map */
